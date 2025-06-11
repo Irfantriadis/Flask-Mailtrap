@@ -15,9 +15,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Email SMTP (gunakan akun Gmail pribadi/test)
 app.config['MAIL_SERVER']='sandbox.smtp.mailtrap.io'
-app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USERNAME'] = '58f0e9529be8fb'
-app.config['MAIL_PASSWORD'] = '18fc13d2456d08'
+app.config['MAIL_PORT'] = #port
+app.config['MAIL_USERNAME'] = 'username'
+app.config['MAIL_PASSWORD'] = 'password' #silahkan bisa copy dari mailtrap
 app.config['MAIL_USE_TLS'] = True
 
 # Inisialisasi
@@ -60,7 +60,7 @@ def register():
     db.session.commit()
 
     # Kirim email aktivasi
-    msg = Message('Kode Aktivasi', sender='irfants1710@gmail.com', recipients=[email])
+    msg = Message('Kode Aktivasi', sender='emailkamu@gmail.com', recipients=[email])
     msg.body = f"Kode aktivasi akun kamu adalah: {code}"
     mail.send(msg)
 
